@@ -1,7 +1,6 @@
 import { ConfigProvider } from "antd";
 import React from "react";
 import ReactDOM from "react-dom/client";
-// import App from "./App";
 import { QueryProvider } from "./providers/QueryProvider";
 import { antdTheme } from "./theme/antdTheme";
 import "./index.css";
@@ -13,7 +12,6 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     <QueryProvider>
       <ConfigProvider theme={antdTheme}>
         <RouterProvider router={router} />
-        {/*<App />*/}
       </ConfigProvider>
     </QueryProvider>
   </React.StrictMode>,
