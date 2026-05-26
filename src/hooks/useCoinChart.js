@@ -4,7 +4,7 @@ import {getCoinChart} from '../api/charts.js'
 
 export function useCoinChart(coinId) {
   return useQuery({
-    queryKey: ['chart'],
+    queryKey: ['chart', coinId],
     queryFn: () => getCoinChart(coinId),
 
     staleTime: 1000 * 60,
