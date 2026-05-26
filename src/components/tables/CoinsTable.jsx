@@ -117,7 +117,10 @@ export function CoinsTable({
       rowKey="id"
       columns={columns}
       dataSource={data}
-      loading={loading}
+      loading={{
+        spinning: loading,
+        delay: 500,
+      }}
       pagination={pagination}
       onChange={onChange}
       scroll={{
