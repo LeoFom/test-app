@@ -125,6 +125,13 @@ export function CoinsTable({
         y: 500,
       }}
       sticky
+      className={`
+        transition-opacity duration-300 
+        ${(isFetching && !loading)
+          ? 'opacity-40 delay-500'
+          : 'opacity-100 delay-0'
+        }
+      `}
     />
   );
 }
