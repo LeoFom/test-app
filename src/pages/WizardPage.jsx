@@ -2,11 +2,12 @@ import { useState } from "react";
 
 import {
   Card,
-  Typography,
 } from "antd";
 
 import { WizardForm } from "../components/forms/WizardForm";
 import { WizardSummary } from "../components/forms/WizardSummary";
+import {PageHeader} from "../components/ui/PageHeader.jsx";
+import {PageContainer} from "../components/ui/PageContainer.jsx";
 
 export default function WizardPage() {
   const [submittedValues, setSubmittedValues] =
@@ -21,16 +22,11 @@ export default function WizardPage() {
   };
 
   return (
-    <div className="flex flex-col gap-6">
-      <div>
-        <Typography.Title level={2}>
-          User Form Wizard
-        </Typography.Title>
-
-        <Typography.Text type="secondary">
-          Form validation and summary flow
-        </Typography.Text>
-      </div>
+    <PageContainer>
+      <PageHeader
+        title={'User Form Wizard'}
+        description={'Form validation and summary flow'}
+      />
 
       <Card>
         {!submittedValues ? (
@@ -44,6 +40,6 @@ export default function WizardPage() {
           />
         )}
       </Card>
-    </div>
+    </PageContainer>
   );
 }
