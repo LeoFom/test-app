@@ -3,11 +3,12 @@ import { useState } from "react";
 import {
   Alert,
   Card,
-  Typography,
 } from "antd";
 
 import { CoinsTable } from "../components/tables/CoinsTable";
 import { useCoinsPaged } from "../hooks/useCoinsPaged";
+import {PageHeader} from "../components/ui/PageHeader.jsx";
+import {PageContainer} from "../components/ui/PageContainer.jsx";
 
 const PAGE_SIZE = 20;
 const TOTAL_ITEMS = 400;
@@ -35,16 +36,11 @@ export default function CoinsPagedPage() {
   }
 
   return (
-    <div className="flex flex-col gap-6">
-      <div className="flex flex-col gap-1">
-        <Typography.Title level={2}>
-          Paginated Coins
-        </Typography.Title>
-
-        <Typography.Text type="secondary">
-          Server-side pagination with Tanstack React Query
-        </Typography.Text>
-      </div>
+    <PageContainer>
+      <PageHeader
+        title={'Paginated Coins'}
+        description={'Server-side pagination with Tanstack React Query'}
+      />
 
       <Card
         className="
@@ -68,6 +64,6 @@ export default function CoinsPagedPage() {
           }}
         />
       </Card>
-    </div>
+    </PageContainer>
   );
 }
