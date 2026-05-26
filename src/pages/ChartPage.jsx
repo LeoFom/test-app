@@ -15,6 +15,8 @@ import { ReloadOutlined } from "@ant-design/icons";
 import { CoinPriceChart } from "../components/charts/CoinPriceChart";
 import { COIN_OPTIONS } from "../constants/coins";
 import { useCoinChart } from "../hooks/useCoinChart";
+import {PageHeader} from "../components/ui/PageHeader.jsx";
+import {PageContainer} from "../components/ui/PageContainer.jsx";
 
 const chartDateFormatter = new Intl.DateTimeFormat("en-US", {
   month: "short",
@@ -54,16 +56,11 @@ export default function ChartPage() {
   }
 
   return (
-    <div className="flex flex-col gap-6">
-      <div>
-        <Typography.Title level={2}>
-          Coin Price Chart
-        </Typography.Title>
-
-        <Typography.Text type="secondary">
-          Real-time chart updates every 15 seconds
-        </Typography.Text>
-      </div>
+    <PageContainer>
+      <PageHeader
+        title={'Coin Price Chart'}
+        description={'Real-time chart updates every 15 seconds'}
+      />
 
       <Card>
         <div className="flex flex-col gap-6">
@@ -95,6 +92,6 @@ export default function ChartPage() {
           </Spin>
         </div>
       </Card>
-    </div>
+    </PageContainer>
   );
 }
