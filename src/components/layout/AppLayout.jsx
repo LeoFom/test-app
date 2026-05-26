@@ -49,7 +49,7 @@ export function AppLayout() {
         </Header>
 
         <Content className="h-full overflow-hidden flex flex-col p-8 overflow-y-auto bg-[#f5f7fb]">
-          <div className="flex-1 overflow-auto max-w-7xl mx-auto min-h-full bg-white p-8 rounded-2xl border border-gray-200 shadow-sm">
+          <div className="flex-1 overflow-auto max-w-7xl w-full mx-auto min-h-full bg-white p-8 rounded-2xl border border-gray-200 shadow-sm">
             <Outlet />
           </div>
         </Content>
