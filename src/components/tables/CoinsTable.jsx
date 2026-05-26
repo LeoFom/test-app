@@ -7,6 +7,7 @@ import { formatPercent } from "../../utils/formatPercent";
 export function CoinsTable({
   data = [],
   loading = false,
+  isFetching= false,
   pagination = false,
   onChange,
 }) {
