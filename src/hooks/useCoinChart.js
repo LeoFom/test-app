@@ -2,7 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 
 import {getCoinChart} from '../api/charts.js'
 
-export function useCoins(coinId) {
+export function useCoinChart(coinId) {
   return useQuery({
     queryKey: ['chart'],
     queryFn: () => getCoinChart(coinId),
