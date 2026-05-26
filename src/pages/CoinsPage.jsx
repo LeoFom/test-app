@@ -1,7 +1,9 @@
-import { Alert, Card, Typography } from "antd";
+import { Alert, Card } from "antd";
 
 import { CoinsTable } from "../components/tables/CoinsTable";
 import { useCoins } from "../hooks/useCoins";
+import {PageHeader} from "../components/ui/PageHeader.jsx";
+import {PageContainer} from "../components/ui/PageContainer.jsx";
 
 export default function CoinsPage() {
   const {
@@ -21,16 +23,11 @@ export default function CoinsPage() {
   }
 
   return (
-    <div className="flex flex-col gap-6">
-      <div>
-        <Typography.Title level={2}>
-          Top Cryptocurrencies
-        </Typography.Title>
-
-        <Typography.Text type="secondary">
-          Top 50 coins by market capitalization
-        </Typography.Text>
-      </div>
+    <PageContainer>
+      <PageHeader
+        title={'Top Cryptocurrencies'}
+        description={'Top 50 coins by market capitalization'}
+      />
 
       <Card
         className="
@@ -42,6 +39,6 @@ export default function CoinsPage() {
           loading={isLoading}
         />
       </Card>
-    </div>
+    </PageContainer>
   );
 }
