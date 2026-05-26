@@ -16,7 +16,7 @@ export default function CoinsPage() {
     return (
       <Alert
         type="error"
-        message="Failed to load coins data"
+        title="Failed to load coins data"
         showIcon
       />
     );
